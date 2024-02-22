@@ -12,13 +12,12 @@ class BookRepository:
         books = []
         for row in rows:
             item = Book(row["id"], row["title"], row["author_name"])
-            books.append(item)
-        return books
+        return [books]
 
     # Find a single book by its id
     def find(self, book_id):
         rows = self._connection.execute(
-            'SELECT * from books WHERE id = %s', [book_id])
+            'SELECT id, author_name from books WHERE id = %s', [book_id])
         row = rows[0]
         return Book(row["id"], row["title"], row["author_name"])
 

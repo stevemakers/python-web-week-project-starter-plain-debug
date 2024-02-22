@@ -9,7 +9,7 @@ def apply_example_routes(app):
     # Returns a list of books
     # Try it:
     #   ; curl http://localhost:5001/books
-    @app.route('/books', methods=['GET'])
+    @app.route('/book', methods=['GET'])
     def get_books():
         connection = get_flask_database_connection(app)
         repository = BookRepository(connection)
@@ -23,10 +23,10 @@ def apply_example_routes(app):
     # Try it:
     #   ; curl http://localhost:5001/books/1
     @app.route('/books/<int:id>', methods=['GET'])
-    def get_book(id):
+    def get_book(book_id):
         connection = get_flask_database_connection(app)
         repository = BookRepository(connection)
-        return str(repository.find(id))
+        return str(repository.find(book_id))
 
 
     # POST /books
