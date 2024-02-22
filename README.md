@@ -31,8 +31,8 @@ There are two videos to support:
 ; pipenv shell
 
 # Create a test and development database
-; createdb YOUR_PROJECT_NAME
-; createdb YOUR_PROJECT_NAME_test
+; createdb web_debugging_workshop
+; createdb web_debugging_workshop_test
 
 # Open lib/database_connection.py and change the database names
 ; open lib/database_connection.py
